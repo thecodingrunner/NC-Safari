@@ -10,7 +10,10 @@ namespace NC_Safari
     {
         public override void CheckAnimalsInEnvironment()
         {
-
+            foreach(Animal animal in animalsInEnvironment)
+            {
+                Console.WriteLine(animal.GetType().Name + " is flying!");
+            }
         }
     }
 }

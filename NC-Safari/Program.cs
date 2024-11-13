@@ -2,31 +2,42 @@
 {
     internal class Program
     {
-        static void Main(string[] args)
+        public static void Main()
         {
-            Tiger fluffy = new Tiger(70.5f);
-            Penguin penny = new Penguin(21);
-            Goose jeff = new Goose(5.5f);
+            Tiger fluffy = new Tiger(80);
+            Penguin penny = new Penguin(20.4f);
+            Goose jeff = new Goose(3);
             Bat betty = new Bat(0.7f);
 
-            List<Animal> animals = new List<Animal>()
-    { fluffy, penny, jeff, betty };
+            Sky sky = new Sky();
+            sky.AddAnimalInEnvironment(betty);
+            sky.AddAnimalInEnvironment(jeff);
 
-            foreach (Animal animal in animals)
+            sky.CheckAnimalsInEnvironment();
+
+            Console.WriteLine("-----------------------");
+
+            HuntingGround hunting = new HuntingGround();
+            hunting.AddAnimalInEnvironment(betty);
+            hunting.AddAnimalInEnvironment(fluffy);
+            hunting.AddAnimalInEnvironment(penny);
+
+            hunting.CheckAnimalsInEnvironment();
+
+            Console.WriteLine("-----------------------");
+
+            List<Animal> animalsToSee = new List<Animal>
             {
-                if (animal is IFly flyingAnimal)
-                {
-                    flyingAnimal.Fly();
-                }
-                if (animal is IHunt huntingAnimal)
-                {
-                    huntingAnimal.Hunt();
-                }
-                if (animal is ISwim swimmingAnimal)
-                {
-                    swimmingAnimal.Swim();
-                }
-            }
+              new Tiger(70),
+              new Goose(5.2f),
+              new Bat(0.9f),
+              new Goose(4),
+              new Tiger(90),
+              new Penguin(15.8f)
+            };
+
+            animalsToSee.Sort(new CompareWeight<>);
+
         }
     }
 }
