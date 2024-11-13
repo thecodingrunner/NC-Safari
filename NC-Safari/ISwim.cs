@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace NC_Safari
 {
-    [Obsolete("IMove is obsolete, we encourage you to IFly, IHunt or ISwim instead!", true)]
-    internal interface IMove
+    internal interface ISwim
     {
-        void Move();
+        public void Swim();
     }
 }

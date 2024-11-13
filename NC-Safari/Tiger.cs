@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 
 namespace NC_Safari
 {
-    internal class Tiger : PantheraBigCat, IMove
+    internal class Tiger : PantheraBigCat, IHunt
     {
         public Tiger(float weight) : base(weight)
         {
         }
 
-        public void Move()
+        public void Hunt()
         {
-            Console.WriteLine("Tiger is moving!");
+            Console.WriteLine("Tiger is hunting on land!");
         }
     }
 }
