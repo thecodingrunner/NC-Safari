@@ -1,4 +1,6 @@
-﻿namespace NC_Safari
+﻿using System.Globalization;
+
+namespace NC_Safari
 {
     internal class Program
     {
@@ -36,8 +38,14 @@
               new Penguin(15.8f)
             };
 
-            animalsToSee.Sort(new CompareWeight<>);
+            animalsToSee.Sort(new CompareWeight(false));
 
+            animalsToSee.ForEach(animal => Console.WriteLine($" {animal.GetType().Name} - {animal.Weight}kg"));
+
+            Tiger pumpkin = new Tiger(100.4);
+
+            pumpkinWeightFormatter = new WeightFormatter(pumpkin, Enums.Culture.DE);
+            //consider how you will pass the culture and measurements
         }
     }
 }

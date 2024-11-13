@@ -8,28 +8,26 @@ namespace NC_Safari
 {
     public class CompareWeight : IComparer<Animal>
     {
-        List<Animal> animals = new List<Animal>();
 
         public bool isAscending;
         public int Compare(Animal x, Animal y)
         {
-            if (x.Weight < y.Weight) return -1;
-            else if (x.Weight == y.Weight) return 0;
-            else return 1;
-        }
-
-        public CompareWeight(Animal x, Animal y)
-        {
-            Compare(x, y);
-
-            if(isAscending)
+            if (isAscending)
             {
-
+                if (x.Weight < y.Weight) return -1;
+                else if (x.Weight == y.Weight) return 0;
+                else return 1;
+            } else
+            {
+                if (x.Weight > y.Weight) return -1;
+                else if (x.Weight == y.Weight) return 0;
+                else return 1;
             }
         }
-        public void SortByWeight(bool isAscending)
-        {
 
+        public CompareWeight(bool isAscending)
+        {
+            this.isAscending = isAscending;
         }
     }
 }
