@@ -6,8 +6,11 @@ using System.Threading.Tasks;
 
 namespace NC_Safari
 {
-    public interface IFly
+    public class Sky : SafariEnvironment<IFly>
     {
-        public void Fly();
+        public override void CheckAnimalsInEnvironment()
+        {
+
+        }
     }
 }

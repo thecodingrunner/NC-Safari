@@ -6,8 +6,11 @@ using System.Threading.Tasks;
 
 namespace NC_Safari
 {
-    public interface IFly
+    internal class HuntingGround : SafariEnvironment<IHunt>
     {
-        public void Fly();
+        public override void CheckAnimalsInEnvironment()
+        {
+
+        }
     }
 }
